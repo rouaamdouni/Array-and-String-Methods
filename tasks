@@ -1,0 +1,124 @@
+/*exercice 1*/ 
+const persons = [
+
+    { name : "MONCEF" , age: 13} ,
+    { name : "BAHIJA" , age: 23} ,
+    { name : "ALA" , age: 18} ,
+    
+    ];
+    /*foreach method */
+/*    let newList=[]
+function MineurMajeur(list){
+  list.forEach(element => {
+    newList.push(element)
+    if(element.age>=18){
+        element.status="Majeur"
+    }else{
+        element.status="Mineur"
+    }
+  });
+}
+MineurMajeur(persons)
+console.log(newList)
+/*
+/* map method */
+function MineurMajeur(list){
+    list.map(e=>{
+        if(e.age>=18){
+            e.status="Majeur"
+        }else{
+            e.status="Mineur"
+        }
+    })
+    return(list)
+}
+console.log(MineurMajeur(persons))
+
+/*filter method */
+function MineurMajeur(list){
+    list.filter(e=>{
+        if(e.age>=18){
+            e.status="Majeur"
+        }else{
+            e.status="Mineur"
+        }
+    })
+    return(list)
+}
+console.log(MineurMajeur(persons))
+/*exercice 2*/
+const str1 = 'ahmed&ferah-moez&saadi-fadhel&gadihi';
+function FormatToArray(str1) {
+    let namelist = []
+    namelist = str1.split("-")
+    let users=[]
+    namelist.map(e=>{
+       users.push(e.split("&"))
+    })
+    let finalarray=users.map(newfunction)
+    function newfunction(e){
+        let newlist=[]
+        newlist.firsname=e[0]
+        newlist.lastname=e[1]
+        return(newlist)
+    }
+    return(finalarray)
+}
+console.log(FormatToArray(str1))
+/*exercice 3*/
+const users = [
+    { name : "sarah" , comment : "j'aime ce poste <3" },
+    { name : "monya" , comment : "le poste est null :( " },
+    { name : "carlos" , comment : "salut l'algérie" }
+    ]
+    function MoodDetect( liste ){
+
+          liste.filter(element=>{
+            if((element.comment.includes("<3"))||(element.comment.includes("j'aime"))||(element.comment.includes("j'adore"))||(element.comment.includes("love"))||(element.comment.includes("in love"))){
+                element.etat="heureux"
+        
+        }else if((element.comment.includes(":("))||(element.comment.includes(":'("))||(element.comment.includes("je deteste"))||(element.comment.includes("bad"))||(element.comment.includes("i hate"))||(element.comment.includes("null"))){
+            element.etat="triste"
+        } else{
+            element.etat="neutre"
+        }
+          })
+          let  newlist=liste.map(newfunction)
+          function newfunction(e){
+              let newlist=[]
+              newlist.name=e.name
+              newlist.etat=e.etat
+              return(newlist)
+          }
+    return(newlist)
+    }
+    console.log(MoodDetect( users ))
+    /*exercice4*/
+    const etudiants = [
+    { name : "sarah" , note : undefined },
+    { name : "monya" , note : 7 },
+    { name : "carlos" , note : 13 },
+    { name : "fadhel" , note : 18 },
+    ]
+
+function FailedStudent( liste ){
+    let filtred =[]
+      liste.filter(e=>{
+if (typeof(e.note)!="undefined"){
+    filtred.push(e)
+}
+    })
+    let moy= filtred.reduce((sommefinal ,element)=>sommefinal+element.note,0)/filtred.length
+    console.log(moy)
+    filtred.map(e=>{
+        if(e.note<moy){
+            e.mention="passable"
+        }else{
+            e.mention="bien"
+        }
+    })
+     filtred.sort((a, b) => b.note - a.note)   
+    return(filtred)
+}    
+console.log(FailedStudent( etudiants ))
+
