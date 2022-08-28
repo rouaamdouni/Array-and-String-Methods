@@ -73,7 +73,7 @@ const users = [
     ]
     function MoodDetect( liste ){
 
-          liste.filter(element=>{
+          liste.map(element=>{
             if((element.comment.includes("<3"))||(element.comment.includes("j'aime"))||(element.comment.includes("j'adore"))||(element.comment.includes("love"))||(element.comment.includes("in love"))){
                 element.etat="heureux"
         
